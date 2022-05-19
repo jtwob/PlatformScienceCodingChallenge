@@ -47,6 +47,10 @@ public class Address {
         this.streetName = streetAddress.split(" ", 2)[1];
     }
 
+    public Boolean isEven(){
+        return this.even?true:false;
+    }
+
     /**
      * Overridden toString for testing and general use.
      * @return String of Address data
