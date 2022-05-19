@@ -110,10 +110,10 @@ public class Driver {
     }
 
     /**
-     * Overrided toString for testing and general use.
+     * Overridden toString for testing and general use.
      * @return String of Driver data
      */
     public String toString(){
-        return ("Name: " + this.name + "\nFactors: " + this.factors +"\nEvenSS: "+ this.evenSS+"\nOddSS: "+ this.oddSS);
+        return ("Name: " + this.name + "\nLength: " + this.length+"\nFactors: " + this.factors +"\nEvenSS: "+ this.evenSS+"\nOddSS: "+ this.oddSS);
     }
 }
