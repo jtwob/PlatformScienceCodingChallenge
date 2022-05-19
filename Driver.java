@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Driver Class
  */
-public class Driver {
+public class Driver /**implements Comparable*/{
     String name;
     int length;
     ArrayList<Integer> factors;
@@ -108,6 +108,10 @@ public class Driver {
 
         return count;
     }
+
+    // public int compareTo(Driver obj){
+        // int comp = this.evenSS.compareTo(obj.evenSS)
+    // }
 
     /**
      * Overridden toString for testing and general use.
