@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * Address Class
+ */
 public class Address {
     String fullAddress;
     String streetName;
@@ -7,6 +10,11 @@ public class Address {
     Boolean even;
     ArrayList<Integer> factors;
 
+    /**
+     * The Address Object constructor, takes a longform address and generates 
+     * the rest of the class variables data from it. 
+     * @param n
+     */
     public Address(String n){
         this.fullAddress = n;
         streetParser();
