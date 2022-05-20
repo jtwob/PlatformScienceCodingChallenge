@@ -109,14 +109,7 @@ public class Driver /**implements Comparable*/{
         return count;
     }
 
-    // public int compareTo(Driver obj){
-        // int comp = this.evenSS.compareTo(obj.evenSS)
-    // }
-
-    /**
-     * Overridden toString for testing and general use.
-     * @return String of Driver data
-     */
+    @Override
     public String toString(){
         return ("Name: " + this.name + "\nLength: " + this.length+"\nFactors: " + this.factors +"\nEvenSS: "+ this.evenSS+"\nOddSS: "+ this.oddSS);
     }

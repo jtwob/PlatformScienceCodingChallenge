@@ -43,18 +43,14 @@ public class Address {
      * Populates the streetName class variable with result.
      */
     private void streetParser(){
+        // Selects the street address
         String streetAddress = this.fullAddress.split(",")[0];
+
+        // Selects the street name
         this.streetName = streetAddress.split(" ", 2)[1];
     }
 
-    public Boolean isEven(){
-        return this.even?true:false;
-    }
-
-    /**
-     * Overridden toString for testing and general use.
-     * @return String of Address data
-     */
+    @Override
     public String toString(){
         return ("Full Address: " + this.fullAddress +"\nStreet Name: "+ this.streetName+ "\nLength: " + this.length + "\nFactors: " + this.factors +"\nEven: "+ this.even);
     }

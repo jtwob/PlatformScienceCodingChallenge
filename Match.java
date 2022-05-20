@@ -9,9 +9,17 @@ public class Match {
     double SS;
 
     /**
+     * Vanilla Match constructor
+     */
+    public Match(){
+        this.SS = 0;
+    }
+
+    /**
      * The Match Object constructor, takes a driver object, an address object,
      * and calculates the total SS between the pair.
-     * @param n
+     * @param n the Driver object in the match
+     * @param k the Address object in the match
      */
     public Match(Driver n, Address k){
         this.destination = k;
@@ -28,16 +36,18 @@ public class Match {
      */
     public double ssCalc(Driver n, Address m){
         double totalSS = 1.0;
+
+        // Access the correct driver base SS for an even or odd length street name
         if(m.even){
             totalSS *= n.evenSS;
         }else{
             totalSS *= n.oddSS;
         }
 
+        // Check for common factors
         Boolean common = false;
-
         HashSet<Integer> commonFactors = new HashSet<Integer>();
-
+        
         for(Integer i : n.factors){
             commonFactors.add(i);
         }
@@ -46,7 +56,8 @@ public class Match {
                 common = true;
             }
         }
-
+        
+        // Check to see if the SS needs the common factor multiplier
         if(common){
             totalSS*=1.5;
         }
@@ -54,11 +65,8 @@ public class Match {
         return totalSS;
     }
 
-    /**
-     * Overridden toString for testing and general use.
-     * @return String of Match data
-     */
+    @Override
     public String toString(){
-        return ("Address: \n" + this.destination.toString() + "\n\nDriver: \n"+ this.driver.toString() + "\n\nTotal SS: " + this.SS);
+        return ("Address: " + this.destination.fullAddress + "\tDriver: "+ this.driver.name);
     }
 }
