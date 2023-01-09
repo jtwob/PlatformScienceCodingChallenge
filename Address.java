@@ -11,15 +11,16 @@ public class Address {
     ArrayList<Integer> factors;
 
     /**
-     * The Address Object constructor, takes a longform address and generates 
-     * the rest of the class variables data from it. 
+     * The Address Object constructor, takes a longform address and generates
+     * the rest of the class variables data from it.
+     * 
      * @param n
      */
-    public Address(String n){
+    public Address(String n) {
         this.fullAddress = n;
         streetParser();
         this.length = this.streetName.length();
-        this.even = this.length % 2 == 0?true:false;
+        this.even = this.length % 2 == 0 ? true : false;
         this.factors = new ArrayList<Integer>();
         factorFinder();
     }
@@ -27,11 +28,11 @@ public class Address {
     /**
      * factorFinder function uses the predetermined length of the street name
      * to generate the list of factors needed for the SS multiplier. Called in
-     * the Address constructor immediately after factors variable is initialized. 
+     * the Address constructor immediately after factors variable is initialized.
      */
-    private void factorFinder(){
-        for(int i = 2; i < this.length; i++){
-            if(this.length%i == 0){
+    private void factorFinder() {
+        for (int i = 2; i < this.length; i++) {
+            if (this.length % i == 0) {
                 this.factors.add(i);
             }
         }
@@ -42,7 +43,7 @@ public class Address {
      * 0000 xyz st., anywhere, TX, 00000
      * Populates the streetName class variable with result.
      */
-    private void streetParser(){
+    private void streetParser() {
         // Selects the street address
         String streetAddress = this.fullAddress.split(",")[0];
 
@@ -51,7 +52,8 @@ public class Address {
     }
 
     @Override
-    public String toString(){
-        return ("Full Address: " + this.fullAddress +"\nStreet Name: "+ this.streetName+ "\nLength: " + this.length + "\nFactors: " + this.factors +"\nEven: "+ this.even);
+    public String toString() {
+        return ("Full Address: " + this.fullAddress + "\nStreet Name: " + this.streetName + "\nLength: " + this.length
+                + "\nFactors: " + this.factors + "\nEven: " + this.even);
     }
 }
